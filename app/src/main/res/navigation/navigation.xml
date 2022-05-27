@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/schoolFragment"
+    android:id="@+id/navigation">
+
+    <fragment
+        android:id="@+id/schoolFragment"
+        android:name="com.dynamicdevz.a20220516_kendyoccean_nycschools.SchoolFragment"
+        android:label="Schools"
+        tools:layout="@layout/fragment_school">
+        <action
+            android:id="@+id/action_schoolFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.dynamicdevz.a20220516_kendyoccean_nycschools.ScoreFragment"
+        android:label="SAT Score"
+        tools:layout="@layout/fragment_score"/>
+
+</navigation>
