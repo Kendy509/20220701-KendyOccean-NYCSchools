@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dynamicdevz.a20220516_kendyoccean_nycschools.R;
@@ -49,24 +50,21 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
 
     public class SchoolViewHolder extends RecyclerView.ViewHolder {
 
+        public CardView schoolCard;
         public TextView nameTextView, addressSchool, webSiteSchool;
         public Button detailsButton;
 
         public SchoolViewHolder(View itemView) {
             super(itemView);
 
+            schoolCard = (CardView) itemView.findViewById(R.id.school_card);
             nameTextView = (TextView) itemView.findViewById(R.id.school_name);
-            addressSchool = (TextView) itemView.findViewById(R.id.school_address);
-            webSiteSchool = (TextView) itemView.findViewById(R.id.school_website);
-            detailsButton = (Button) itemView.findViewById(R.id.school_scores);
         }
 
         public void bind(Schools school, DetailsHandler handlerClick) {
             nameTextView.setText(school.getSchoolName());
-            addressSchool.setText(school.getLocation());
-            webSiteSchool.setText(school.getWebsite());
 
-            detailsButton.setOnClickListener(view -> {
+            schoolCard.setOnClickListener(view -> {
                 handlerClick.handleDetailsClick(school);
             });
         }

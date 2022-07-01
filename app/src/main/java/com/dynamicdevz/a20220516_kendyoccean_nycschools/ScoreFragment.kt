@@ -38,10 +38,12 @@ class ScoreFragment : BaseFragment() {
                     val score = state.scores.firstOrNull()
 
                     if (state.scores.isEmpty()) {
+                        binding.schScoreDetails.text = "SAT Details Unavailable"
                         binding.schReadScore.visibility = View.GONE
                         binding.schWriteScore.visibility = View.GONE
                         binding.mathScore.visibility = View.GONE
                     } else {
+                        binding.schScoreDetails.text = "SAT Details"
                         binding.schReadScore.text = String.format("Read Score: " + score?.satCriticalReadingAvgScore)
                         binding.schWriteScore.text = String.format("Write Score: " + score?.satWritingAvgScore)
                         binding.mathScore.text = "Math Score: " + score?.satMathAvgScore

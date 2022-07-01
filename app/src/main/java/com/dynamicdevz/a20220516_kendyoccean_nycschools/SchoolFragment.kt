@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dynamicdevz.a20220516_kendyoccean_nycschools.adapter.DetailsHandler
 import com.dynamicdevz.a20220516_kendyoccean_nycschools.adapter.SchoolAdapter
@@ -31,7 +32,7 @@ class SchoolFragment : BaseFragment(), DetailsHandler {
     ): View? {
 
         binding.schoolsRv.apply {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            layoutManager = GridLayoutManager(requireContext(), 3, GridLayoutManager.VERTICAL,  false)
             adapter = schoolAdapter
         }
 
